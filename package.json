@@ -1,0 +1,17 @@
+{
+  "name": "com.hexseragames.bc2deditor",
+  "version": "1.0.0",
+  "displayName": "Easy BoxCollider2D Editor for Pixel Art",
+  "description": "Easily fit your BoxCollider2D to pixel-perfect sizes.",
+  "unity": "2021.3",
+  "keywords" : [
+    "BoxCollider2D",
+    "Editor",
+    "pixel"
+  ],
+  "author": {
+    "name": "Hexseragames",
+    "email": "hexsera78049@gmail.com"
+  }
+
+}
