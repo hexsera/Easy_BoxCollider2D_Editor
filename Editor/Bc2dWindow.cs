@@ -25,6 +25,7 @@ namespace HexseraBc2dEditor
         private string preset_name = "";
         private Vector2 preset_scroll = Vector2.zero;
         private string path_asset = "Assets/Bc2dEditorPreset/";
+        //private string path_asset = "Assets/Easy Bc2d Editor/Bc2dEditorPreset/";
 
         
 
@@ -46,6 +47,16 @@ namespace HexseraBc2dEditor
             Main();
 
         }
+
+        private void OnDisable()
+        {
+            if (handle != null)
+            {
+                handle.ClearThis();
+                handle = null;
+            }
+        }
+
 
         private void Main()
         {
@@ -72,6 +83,32 @@ namespace HexseraBc2dEditor
                 }
             
             #endif
+
+            /* #if UNITY_6000
+                if (AssetDatabase.AssetPathExists("Assets/Easy Bc2d Editor/Bc2dEditorPreset") == false)
+                {
+                    AssetDatabase.CreateFolder("Assets/Easy Bc2d Editor", "Bc2dEditorPreset");
+
+                }
+            #elif UNITY_2022_3
+                if (AssetDatabase.IsValidFolder("Assets/Easy Bc2d Editor/Bc2dEditorPreset") == false)
+                {
+                    AssetDatabase.CreateFolder("Assets/Easy Bc2d Editor", "Bc2dEditorPreset");
+                }
+            #elif UNITY_2021_3
+                if (AssetDatabase.IsValidFolder("Assets/Easy Bc2d Editor/Bc2dEditorPreset") == false)
+                {
+                    AssetDatabase.CreateFolder("Assets/Easy Bc2d Editor", "Bc2dEditorPreset");
+                }
+            #else
+                if (AssetDatabase.IsValidFolder("Assets/Easy Bc2d Editor/Bc2dEditorPreset") == false)
+                {
+                    AssetDatabase.CreateFolder("Assets/Easy Bc2d Editor", "Bc2dEditorPreset");
+                }
+            
+            #endif */
+
+
 
             preset = AssetDatabase.LoadAssetAtPath<Bc2dPreset>(path_asset + "Bc2dPreset.asset");
             if (preset == null)

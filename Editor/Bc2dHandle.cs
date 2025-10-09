@@ -14,6 +14,7 @@ namespace HexseraBc2dEditor
         }
 
         private string path_asset = "Packages/com.hexseragames.bc2deditor/Sprite/";
+        //private string path_asset = "Assets/Easy Bc2d Editor/Sprite/";
 
         private Bc2dWindow parent_window;
         private GameObject target;
